@@ -1,0 +1,65 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-parking-lot-tables
+      author: samuel
+      changes:
+        - createTable:
+            tableName: parking_lot
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: capacity
+                  type: INT
+              - column:
+                  name: motorcycle_spots
+                  type: INT
+              - column:
+                  name: car_spots
+                  type: INT
+              - column:
+                  name: van_spots
+                  type: INT
+        - createTable:
+            tableName: spot
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: type
+                  type: VARCHAR(255)
+              - column:
+                  name: occupied
+                  type: BOOLEAN
+              - column:
+                  name: parking_lot_id
+                  type: BIGINT
+        - createTable:
+            tableName: vehicle
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: type
+                  type: VARCHAR(255)
+              - column:
+                  name: license_plate
+                  type: VARCHAR(255)
+              - column:
+                  name: spot_id
+                  type: BIGINT
