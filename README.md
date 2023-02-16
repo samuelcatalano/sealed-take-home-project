@@ -258,7 +258,7 @@ http://localhost:8080/api/parking-lot/occupied-spots
 Retrieve how many spots vans are taking up:  
 http://localhost:8080/api/parking-lot/van-spots
 
-## Taken Decisions
+## Made Decisions
 1) I have chosen to use Spring Boot because I think configuration, annotations and flows are newer to me. I started using Micronaut but faced some issues probably because I should spend more time reading the documentation but I don't want to take the risk to lose the deadline to deliver the take-home.
 2) I have chosen to keep separate enums for CarType and SpotType even though the values are the same at this moment. I made this decision because in the future we can add new vehicles types but keep the same spot types and just work with the adjacent spots.
 3) When we try to park a van, we first try to occupy the spots designated for vans and only then occupy the spots designated for cars. When a van stops in a car spot, first we check if there are at least 3 spots available and we mark the 3 as occupied but just set one with the vehicle itself.
